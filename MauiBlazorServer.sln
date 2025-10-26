@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36518.9 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedRazorClassLibrary", "SharedRazorClassLibrary\SharedRazorClassLibrary.csproj", "{704E6696-2CD3-45D0-A94A-7D2FC6F9117F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreWebRazorPages", "AspNetCoreWebRazorPages\AspNetCoreWebRazorPages.csproj", "{C63C0BE7-B202-454E-9FBD-D688C4E141F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiBlazorHybridApp", "MauiBlazorHybridApp\MauiBlazorHybridApp.csproj", "{299A55CD-CBD0-44B1-9192-F132E4E88A93}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{704E6696-2CD3-45D0-A94A-7D2FC6F9117F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{704E6696-2CD3-45D0-A94A-7D2FC6F9117F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{704E6696-2CD3-45D0-A94A-7D2FC6F9117F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{704E6696-2CD3-45D0-A94A-7D2FC6F9117F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C63C0BE7-B202-454E-9FBD-D688C4E141F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C63C0BE7-B202-454E-9FBD-D688C4E141F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C63C0BE7-B202-454E-9FBD-D688C4E141F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C63C0BE7-B202-454E-9FBD-D688C4E141F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{299A55CD-CBD0-44B1-9192-F132E4E88A93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{299A55CD-CBD0-44B1-9192-F132E4E88A93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{299A55CD-CBD0-44B1-9192-F132E4E88A93}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{299A55CD-CBD0-44B1-9192-F132E4E88A93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{299A55CD-CBD0-44B1-9192-F132E4E88A93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{299A55CD-CBD0-44B1-9192-F132E4E88A93}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AA8E726B-728B-4470-B152-170BCE2C5DD2}
+	EndGlobalSection
+EndGlobal
