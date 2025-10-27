@@ -1,5 +1,15 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="main-layout">
-    @Body
+<div class="min-h-screen flex flex-col">
+    <header class="p-3 border-bottom">
+        <h1 class="h4 m-0">Shared Layout</h1>
+    </header>
+
+    <main class="container py-3">
+        @Body
+    </main>
+
+    <footer class="mt-auto p-3 border-top text-muted">
+        <small>© @DateTime.Now.Year</small>
+    </footer>
 </div>

@@ -36,4 +36,7 @@ app.MapRazorPages();
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
 
+// Gör startsidan till Blazor-sidan
+app.MapGet("/", () => Results.Redirect("/app"));
+
 app.Run();
