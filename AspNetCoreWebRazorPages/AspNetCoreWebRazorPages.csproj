@@ -4,10 +4,15 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+
+	<!-- Viktigt i .NET 8: aktiverar stöd för Razor Components -->
+	<EnableRazorComponents>true</EnableRazorComponents>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\SharedRazorClassLibrary\SharedRazorClassLibrary.csproj" />
   </ItemGroup>
+
+  
 
 </Project>

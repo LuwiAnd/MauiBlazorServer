@@ -28,6 +28,9 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+// Viktigt för interaktiva Blazor-komponenter i .NET 8
+app.UseAntiforgery();
+
 app.MapRazorPages();
 
 app.MapRazorComponents<App>()

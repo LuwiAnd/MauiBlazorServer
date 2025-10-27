@@ -1,8 +1,13 @@
-﻿<Router AppAssembly="@typeof(App).Assembly">
+﻿@using Microsoft.AspNetCore.Components.Routing
+@using SharedRazorClassLibrary.Components;
+
+<Router AppAssembly="@typeof(App).Assembly">
     <Found Context="routeData">
-        <RouteView RouteData="@routeData" />
+        <RouteView RouteData="@routeData" DefaultLayout="typeof(MainLayout)" />
     </Found>
     <NotFound>
-        <p>Sidan kunde inte hittas.</p>
+        <LayoutView Layout="typeof(MainLayout)">
+            <p>Sidan kunde inte hittas.</p>
+        </LayoutView>
     </NotFound>
 </Router>
