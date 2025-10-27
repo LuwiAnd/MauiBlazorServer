@@ -1,4 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
+//using Microsoft.AspNetCore.Components;
+//using Microsoft.Extensions.DependencyInjection;
+//using Microsoft.AspNetCore.Components.Web;
 
 namespace MauiBlazorHybridApp
 {
@@ -15,9 +18,13 @@ namespace MauiBlazorHybridApp
                 });
 
             builder.Services.AddMauiBlazorWebView();
+            // I Maui ska allt köras lokalt, så ingen server-side rendering behövs
+            //builder.Services.AddRazorComponents()
+            //    .AddInteractiveServerComponents(); // Denna används däremot i webbprojektet.
+            //builder.Services.AddRazorComponents();
 
 #if DEBUG
-    		builder.Services.AddBlazorWebViewDeveloperTools();
+            builder.Services.AddBlazorWebViewDeveloperTools();
     		builder.Logging.AddDebug();
 #endif
 
