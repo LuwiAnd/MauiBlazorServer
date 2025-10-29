@@ -1,7 +1,9 @@
 ﻿@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.Web
 @using SharedRazorClassLibrary.Components;
 
-<Router AppAssembly="@typeof(App).Assembly">
+<Router AppAssembly="@typeof(App).Assembly" 
+        AdditionalAssemblies="@(new[] { typeof(MySharedBox).Assembly })">
     <Found Context="routeData">
         <RouteView RouteData="@routeData" DefaultLayout="typeof(MainLayout)" />
     </Found>
@@ -11,3 +13,5 @@
         </LayoutView>
     </NotFound>
 </Router>
+
+<HeadOutlet/>

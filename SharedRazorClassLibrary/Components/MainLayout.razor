@@ -1,15 +1,27 @@
 ﻿@inherits LayoutComponentBase
+@using SharedRazorClassLibrary.Components
 
-<div class="min-h-screen flex flex-col">
-    <header class="p-3 border-bottom">
-        <h1 class="h4 m-0">Shared Layout</h1>
+<!-- Mobile-only handler -->
+<DeepLinkHandler />
+
+<div class="app-shell">
+    <header class="topbar">
+        <h1>My app</h1>
     </header>
 
-    <main class="container py-3">
+    <main class="content">
         @Body
     </main>
-
-    <footer class="mt-auto p-3 border-top text-muted">
-        <small>© @DateTime.Now.Year</small>
-    </footer>
 </div>
+
+<style>
+    .topbar {
+        padding: 12px;
+        background: #512BD4;
+        color: white;
+    }
+
+    .content {
+        padding: 16px;
+    }
+</style>

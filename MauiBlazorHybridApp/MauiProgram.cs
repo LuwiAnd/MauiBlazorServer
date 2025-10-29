@@ -2,6 +2,7 @@
 //using Microsoft.AspNetCore.Components;
 //using Microsoft.Extensions.DependencyInjection;
 //using Microsoft.AspNetCore.Components.Web;
+using SharedRazorClassLibrary.Services;
 
 namespace MauiBlazorHybridApp
 {
@@ -22,6 +23,8 @@ namespace MauiBlazorHybridApp
             //builder.Services.AddRazorComponents()
             //    .AddInteractiveServerComponents(); // Denna används däremot i webbprojektet.
             //builder.Services.AddRazorComponents();
+
+            builder.Services.AddSingleton<PendingLinkService>();
 
 #if DEBUG
             builder.Services.AddBlazorWebViewDeveloperTools();

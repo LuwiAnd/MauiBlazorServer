@@ -1,10 +1,18 @@
 ﻿@namespace MauiBlazorHybridApp
 
 @using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.Web
 @using SharedRazorClassLibrary.Components
+@using SharedRazorClassLibrary.Pages
+
+<h1 style="color:red">✅ MobileApp.razor är laddad</h1>
+
+@* <!-- Mobile-only handler -->
+<DeepLinkHandler /> *@
 
 @* Viktigt att detta är identisk med motsvarande fil i Webbprojektet för samma navigation. *@
-<Router AppAssembly="@typeof(MobileApp).Assembly">
+<Router AppAssembly="@typeof(MobileApp).Assembly"
+        AdditionalAssemblies="@(new[] { typeof(MySharedBox).Assembly })">
     <Found Context="routeData">
         <RouteView RouteData="@routeData" DefaultLayout="typeof(MainLayout)" />
     </Found>

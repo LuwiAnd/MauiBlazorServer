@@ -1,0 +1,29 @@
+@inject NavigationManager NavigationManager
+@inject SharedRazorClassLibrary.Services.PendingLinkService PendingLinkService
+
+@code {
+    bool _navigated = false;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        // Endast första render är relevant
+        if (!firstRender || _navigated)
+            return;
+
+        if (!string.IsNullOrEmpty(PendingLinkService.PendingUri))
+        {
+            var uri = PendingLinkService.PendingUri!;
+            PendingLinkService.PendingUri = null;
+
+            // Konvertera luwiapp://page till /page
+            if (uri.StartsWith("luwiapp://", StringComparison.OrdinalIgnoreCase))
+            {
+                try { uri = new Uri(uri).PathAndQuery; } catch { }
+            }
+
+            _navigated = true;
+            await Task.Yield(); // Vänta en render, annars blir skärmen tom
+            NavigationManager.NavigateTo(uri, forceLoad: false);
+        }
+    }
+}

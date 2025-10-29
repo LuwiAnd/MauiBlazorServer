@@ -2,8 +2,11 @@ using AspNetCoreWebRazorPages;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SharedRazorClassLibrary.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddSingleton<PendingLinkService>();
 
 // Add services to the container.
 builder.Services.AddRazorPages();
