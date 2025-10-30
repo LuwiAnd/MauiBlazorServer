@@ -1,4 +1,5 @@
-﻿using Android.App;
+﻿#if ANDROID
+using Android.App;
 using Android.Content.PM;
 using Android.OS;
 
@@ -6,6 +7,8 @@ using Android.Content;
 using SharedRazorClassLibrary.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Maui;
+
+using Android.Util;
 
 namespace MauiBlazorHybridApp.Platforms.Android
 {
@@ -59,13 +62,16 @@ namespace MauiBlazorHybridApp.Platforms.Android
                     {
                         pending.PendingUri = uri;
                     }
+
+                    global::Android.Util.Log.Info("MainActivity", $"Handled deep link: {uri}");
                 }
             }
-            catch
+            catch (Exception ex)
             {
                 // Ignorera eventuella parsingfel här
+                global::Android.Util.Log.Error("MainActivity", ex.ToString());
             }
         }
     }
 }
-
+#endif

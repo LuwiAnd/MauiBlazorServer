@@ -1,5 +1,7 @@
+@using Microsoft.Extensions.Logging
 @inject NavigationManager NavigationManager
 @inject SharedRazorClassLibrary.Services.PendingLinkService PendingLinkService
+@inject Microsoft.Extensions.Logging.ILogger<DeepLinkHandler> Logger
 
 @code {
     bool _navigated = false;
@@ -18,7 +20,12 @@
             // Konvertera luwiapp://page till /page
             if (uri.StartsWith("luwiapp://", StringComparison.OrdinalIgnoreCase))
             {
-                try { uri = new Uri(uri).PathAndQuery; } catch { }
+                try { 
+                    uri = new Uri(uri).PathAndQuery; 
+                } catch(Exception ex)
+                {
+                    Logger?.LogWarning(ex, "Fel vid parsning av deep link: {Uri}", uri);
+                }
             }
 
             _navigated = true;
