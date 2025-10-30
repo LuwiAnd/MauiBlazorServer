@@ -3,11 +3,13 @@
 //using Microsoft.Extensions.DependencyInjection;
 //using Microsoft.AspNetCore.Components.Web;
 using SharedRazorClassLibrary.Services;
+using System;
 
 namespace MauiBlazorHybridApp
 {
     public static class MauiProgram
     {
+        public static IServiceProvider Services { get; private set; } = null!;
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
@@ -30,8 +32,11 @@ namespace MauiBlazorHybridApp
             builder.Services.AddBlazorWebViewDeveloperTools();
     		builder.Logging.AddDebug();
 #endif
+            var app = builder.Build();
+            Services = app.Services;
 
-            return builder.Build();
+            //return builder.Build();
+            return app;
         }
     }
 }
